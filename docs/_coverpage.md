@@ -1,4 +1,4 @@
-![logo](https://i.loli.net/2019/08/29/7tJSWMPYV1bERo3.png)
+![logo](./assets/photos/tree.png)
 
 # Fanmu
 
