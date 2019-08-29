@@ -2,3 +2,4 @@
 * [Git](Git/)
     * [git命令](Git/command)
 * [TypeScript](TypeScript/)
+    * [接口类型](TypeScript/interface)
