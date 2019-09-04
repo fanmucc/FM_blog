@@ -2,5 +2,6 @@
 * [Git](Git/)
     * [git命令](Git/command)
 * [TypeScript](TypeScript/)
+    * [基础类型](TypeScript/basictype)
     * [接口类型](TypeScript/interface)
     * [函数类型](TypeScript/function)
