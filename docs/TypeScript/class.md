@@ -280,6 +280,13 @@ arr.fill(1)         // fill 填充属性，将内容填充值arr中 arr = 【1,1
 - public 公共的
 - private 私有属性
 - protected 受保护的，修饰符可以在继承的子类中访问；
+- readonly 只读属性
+- status 静态属性
+- 参数属性
+- 存值取值
+- 抽象类
+- 实例属性
+- 接口继承类
 
 示例
 ```ts
@@ -312,6 +319,25 @@ class Parent {
 const p = new Parent(18)
 p.age   // 错误
 Parent.age   // 18
+```
+### protected 受保护的
+> 如果将protected属性设置为constructor() 时，只能通过继承使用，不能通过实例或者类本事来使用
+
+```ts
+class Parent {
+    public age: number = 1
+    protected constructor (age: number) {
+        this.age = age;
+    }
+}
+
+// 继承
+class ParentTwo extends Parent {
+    consrtuctor(age) {
+        super(age)
+    }
+}
+const p1 = new ParentTwo(18)
 ```
 
 ### readonly 
