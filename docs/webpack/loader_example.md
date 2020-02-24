@@ -1,4 +1,4 @@
-#### `Loader` 的简单实用
+#### `Loader` 的简单使用
 
 ##### ES6/ES7转ES5
 - [babel相关博客](https://juejin.im/post/5bfe541bf265da6179748834)

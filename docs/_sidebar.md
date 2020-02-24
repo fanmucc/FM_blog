@@ -4,6 +4,8 @@
     * [常用Loader和Plugins组件](webpack/loader_plugins)
     * [入口和输出简单示例](webpack/entry_output_example)
     * [Loader简单示例](webpack/loader_example)
+    * [文件监听及热更新](webpack/update)
+    * [文件指纹](webpack/fingerprint)
 * [Vue](Vue/)
     * [路由守卫](Vue/guard)
     * [路由](Vue/router)

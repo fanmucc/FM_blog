@@ -20,3 +20,4 @@
 |HtmlWebpackPlugin|创建html文件去承载输出的bundle|
 |UglifyjsWebpackPlugin|压缩js|
 |ZipWebpackPlugin|将打包出的资源生成一个zip包|
+|mini-css-extract-plugin|[将CSS提取到单独的文件中。它为每个包含CSS的JS文件创建一个CSS文件。它支持CSS和SourceMap的按需加载](https://www.npmjs.com/package/mini-css-extract-plugin)|
