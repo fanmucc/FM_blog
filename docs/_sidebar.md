@@ -5,6 +5,7 @@
 * [小程序](weChar/)
     * [生命周期](weChar/lifeTime)
     * [数据修改](weChar/setData)
+    * [常用组件](weChar/components)
 * [WebPack](webpack/)
     * [常用Loader和Plugins组件](webpack/loader_plugins)
     * [入口和输出简单示例](webpack/entry_output_example)
