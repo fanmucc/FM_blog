@@ -2,6 +2,8 @@
 * [每日一章](DailyChapter/)
 * [Css](Css/)
     * [flex](Css/flex)
+* [JavaScript](Js/)
+    * [DOM](Js/dom)
 * [小程序](weChar/)
     * [生命周期](weChar/lifeTime)
     * [数据修改](weChar/setData)
