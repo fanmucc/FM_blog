@@ -1,22 +1,13 @@
-#### Koa 框架介绍
-Node.js 是一个异步的世界，官方 API 支持的都是 callback 形式的异步编程模型，这 会带来许多问题，例如:1、callback 嵌套问题 2、异步函数中可能同步调用 callback 返回 数据，带来不一致性。为了解决以上问题 Koa 出现了。
-> Koa -- 基于 Node.js 平台的下一代 web 开发框架
+### 什么是node.js ?
 
-koa 是由 Express 原班人马打造的，致力于成为一个更小、更富有表现力、更健壮的 Web 框架。 使用 koa 编写 web 应用，可以免除重复繁琐的回调函数嵌套， 并极大地提 升错误处理的效率。koa 不在内核方法中绑定任何中间件， 它仅仅提供了一个轻量优雅的 函数库，使得编写 Web 应用变得得心应手。开发思路和 express 差不多，最大的特点就是 可以避免异步嵌套。
+- `node.js`是一个构建在Chrome JavaScript运行环境的平台，这是很重要的一点，node.js并不是一门语言，而是一个平台。
+- `node.js`致力于构建速度快、稳定的网络程序更简单。
+- `node.js`具有事件驱动和非阻塞I/O的特色，使之轻量级并且高效率。
+- `node.js`非常适合在分布式设备运行数据密集型实时应用程序
 
-#### 安装
-```npm install koa -G```
+`Node.js`核心主要是两部分组成的：
 
-#### 使用
-```
-1. 初始化项目
-npm init;
-2. 安装koa
-npm install --save koa;
-3. 引入
-/引入 Koa
-const koa=require('koa'); const app=new koa();
-//配置中间件 (可以先当做路由) app.use( async (ctx)=>{ ctx.body='hello koa2'
-})
-//监听端口 app.listen(3000);
-```
+1. V8引擎，它负责把`JavaScript`代码解释成本地的二进制代码运行。
+2. `libuv`，类似`Windows`上的窗口消息机制，它主要负责订阅和处理系统的各种内核消息。而且它也实现了消息循环（是不是很耳熟？没错，这个几乎就和`Windows`的窗口消息循环是一个概念。）它的前身是`linux`上的`libev`，专门封装linux上的内核消息机制。后来`Node.js`重写了它，并在`Windows`上使用`iocp`技术重新实现了一遍。所以`Node.js`现在能跨平台运行在Windows上了。
+
+可以说，`Node.js`其实就是libuv的一个应用而已。简单的说`Node.js`只是把JavaScript解释成C++的回调，并挂在libuv消息循环上，等待处理。这样就实现了非阻塞的异步处理机制。
