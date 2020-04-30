@@ -73,3 +73,19 @@ select sum(age) as ageSum from test_one
 select count(*) from test_one
 select avg(id) as idavg, max(age) as ageMax from test_one
 
+
+-- 分组
+-- group by   haning 过滤分组   where过滤的是行不是分组，因此不能使用where
+select vend_id, count(*) as num_prods from products group by vend_id
+select cust_id, count(*) as orders from orders group by cust_id having count(*) >=2
+select vend_id, count(*) as num_prods from products where prod_price >= 10 group by vend_id having count(*) >=2
+
+-- 子查询
+select order_num from orderitems where prod_id = 'TNT2'   -- 先查询商品为tnt2的订单编号
+select cust_id from orders where order_num in(20005,20007)  -- 根据查询出来的订单编号查找具有其订单编号的客户id
+-- 进行组合
+select cust_id from orders where order_num in (select order_num from orderitems where prod_id = 'TNT2')
+select cust_name, cust_contact from customers where cust_id in (select cust_id from orders where order_num in (select order_num from orderitems where prod_id = "TNT2"))
+-- 计算字段使用子查询
+select cust_name, cust_state, (select count(*) from orders where orders.cust_id = customers.cust_id) as orders from customers order by cust_name
+
