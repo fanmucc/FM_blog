@@ -26,3 +26,4 @@
 |minimum-scale|定义缩放最小比例,它必须小于或等于maximum-scale设置|整数或者小数|
 |user-scalable|定义是否允许用户手动缩放页面,默认值为yes|yes/no|
 
+
