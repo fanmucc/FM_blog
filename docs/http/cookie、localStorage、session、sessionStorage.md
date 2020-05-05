@@ -105,3 +105,57 @@ CSRF: 跨站请求伪造 (CSRF) 是一种冒充受信任用户, 向服务器发�
 - 防止 Cookie 是明文，服务器端生成秘钥验证
 - 生成随机数和 Cookie 发送给服务器端
 - `flash编程安全`, 审核 `flash代码`, 尽量不要用 `flash` 用最新的HTML5标签：如 `Video`等
+
+##### Session
+
+session是什么？ Session 是一种记录客户状态的机制，不同于 Cookie 的是 Cookie 保存在客户端的浏览器中，而 Session 保存在服务器上，避免了在客户端 Cookie 中存储敏数据。
+
+Session 机制
+
+Session 从字面意思上可以理解为会话， 谁与谁的会话呢？ 其实是客户端浏览器与服务器之间一系列交互的动作称之为 Session。
+
+创建Session(java)
+
+1. Session 在服务器端程序运行的过程中创建的， 不同语言实现的应用程序有不同穿件 Session 的方法；
+2. Session 被创建之后，就可以调用 Session 相关的方法往 Session 中增加内容，而这些内容只会保存在服务器中，发到客户端的只有 session id；
+3. 当客户端再次发送请求的时候，会将这个 session id 带上， 服务器接受到请求之后就会依据 session id 找到相应的 Session， 从而再此使用 Session.
+
+Session的生命周期
+
+Session 保存在服务器端，为了获得更高的存取速度，服务器一般吧 Session 放在内存中， 每个用户都会有一个独立的 Session。 如果 Session 内容过于复杂，当大量客户访问服务器时可能会导致内存溢出，因此， Session 里面的信息应该尽量精简
+
+Session 在用户第一次访问服务器的时候自动创建，需要注意只有访问 JSP、Servlet 等程序时才会创建 Session， 只访问 HTML、IMAGE 等静态资源并不会创建 Session。如果尚未生成 Session， 也可以使用 request.getSession(true) 强制生成 Session 。
+
+Session 生成后，只要用户继续访问，服务器就会更新 Session 的最后访问时间，并维护改 Session。 用户每次访问服务器一次， 无论是否读写 Session， 服务器都认为该用户的 Session 活跃(avtive)了一次；
+
+Session 有效期
+
+由于会有越来越多的用户访问服务器， 因此 Session 也会越来越多， 为防止内存溢出， 服务器会把长时间内没有活跃额 Session 用内存中删除， 这个时间就是 Session 的超时时间，如果超过了超时时间没有访问过服务器， Session 就自动失效了。
+
+Session 的超时时间为 maxInactiveInterval 属性， 可以通过对应的getMaxInactiveInterval()获取，通过setMaxInactiveInterval(longinterval)修改。Session的超时时间也可以在web.xml中修改。 另外，通过调用Session的invalidate()方法可以使Session失效。
+
+三种方法让 Session 失效
+
+- 服务器以外关闭；（服务器正常关闭时session是会被服务器保存在服务器的 session.ser 文件中（在work文件夹下））
+- session自杀： 调用 session.invalidate()方法可以立刻杀死 session;
+- 可以在服务器下的 web.xml 文件中 <session-timeout> 30 </session-timeout> 修改这个默认值(30分钟)，是以分为单位；
+
+浏览器关闭 Session 会失效？
+
+为什么失效
+
+下面梳理一下session为什么会在浏览器关闭时失效，其实这样说并不准确：
+
+- 在服务器端生成session，并且把sessionid通过set-cookie发送给浏览器
+- 以后每次请求除了图片、静态文件请求，其它的请求都会带上服务端写入浏览器中cookie
+- 服务端接收到sessionid，通过sessionid找到对应的session信息
+- 当浏览器关闭时，当前域名中设置的cookie会被清空
+- 再下次请求使，服务端接收到的session为null，服务端就会认为当前用户是一个新的用户，重新登录或者直接设置新的sessionid
+
+上面也就是为什么会说session会在浏览器关闭时会失效。
+
+怎么能让它不失效？
+
+在Set-Cookie时设置Expries或Max-Age，其实就是设置Cookie的失效时间。或者直接把Sessionid储存在本地。
+
+
