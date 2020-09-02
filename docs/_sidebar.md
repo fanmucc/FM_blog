@@ -36,6 +36,7 @@
         * [useState](React/react_hooks_useState)
         * [useEffect](React/react_hooks_useEffect)
         * [useContext](React/react_hooks_useContext)
+        * [useReducer](React/react_hooks_useReducer)
 * [Git](Git/)
     * [git命令](Git/command)
 * [打印样式](Print/)

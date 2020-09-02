@@ -1,4 +1,4 @@
-## useEffect
+#### useEffect
 ``` js
 useEffect(didUpdate)
 // 该Hook接收一个包含命令式、且可能有副作用代码的函数

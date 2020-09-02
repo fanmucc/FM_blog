@@ -1,4 +1,4 @@
-## useContext 与 createContext
+#### useContext 与 createContext
 
 ``` js
 const value = useContext(MyContext);
@@ -36,3 +36,5 @@ function App () {
 
 export default App
 ```
+
+[更多Context使用方法](https://zh-hans.reactjs.org/docs/context.html)
