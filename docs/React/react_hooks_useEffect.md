@@ -128,9 +128,9 @@ function App(){
 export default App;
 ```
 
-1. 不传  表示每轮组件渲染完成后执行，也就是渲染一次执行一次。有点像 `componentDidUpdate`
+1. 不传  表示每轮组件渲染完成后执行都会执行一次。有点像 `componentDidUpdate`
 2. 传[]数组  表示没有任何依赖性, 永远只执行一次，有点像 `componentDidMount`
-3. 穿衣一个依赖数组[items]  表示依赖项发生改变，渲染后执行。 相当于给 `componentDidUpdate` 添加了执行条件
+3. 传一个依赖数组[items]  表示依赖项发生改变，渲染后执行。 相当于给 `componentDidUpdate` 添加了执行条件
 
 注意： 初始化时都会被调用
 

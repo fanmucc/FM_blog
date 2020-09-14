@@ -62,4 +62,6 @@ function handleDate(x: any): any {                  // 函数实体，不是重�
         return x.toString().split('').map((item) => Number(item));
     }
 }
+let func = handleDate 
+func(a:number)
 ```
