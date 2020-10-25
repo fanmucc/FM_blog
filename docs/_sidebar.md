@@ -5,6 +5,8 @@
     * [移动端viewport](Html/viewport)
 * [Css](Css/)
     * [flex](Css/flex)
+* [JavaScript高级程序设置](JavaScript高级程序设置/)
+    * [location对象](JavaScript高级程序设置/location)
 * [JavaScript](Js/)
     * [DOM](Js/dom)
 * [小程序](weChar/)
