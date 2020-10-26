@@ -9,6 +9,7 @@
     * [location对象](JavaScript高级程序设置/location)
 * [JavaScript](Js/)
     * [DOM](Js/dom)
+    * [js数据类型](Js/js数据类型)
 * [小程序](weChar/)
     * [生命周期](weChar/lifeTime)
     * [数据修改](weChar/setData)
